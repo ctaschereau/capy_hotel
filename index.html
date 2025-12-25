@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏨 Hôtel des Animaux Mignons</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Chewy&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="floating-animals">
+        <span class="float-animal" style="--delay: 0s; --x: 10%;">🐕</span>
+        <span class="float-animal" style="--delay: 2s; --x: 25%;">🐈</span>
+        <span class="float-animal" style="--delay: 4s; --x: 45%;">🐹</span>
+        <span class="float-animal" style="--delay: 1s; --x: 65%;">🐰</span>
+        <span class="float-animal" style="--delay: 3s; --x: 80%;">🦜</span>
+        <span class="float-animal" style="--delay: 5s; --x: 90%;">🐢</span>
+    </div>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">🏨</span>
+            <h1>Hôtel des Animaux Mignons</h1>
+        </div>
+        <p class="tagline">✨ Où chaque patte est traitée comme une star ! ✨</p>
+    </header>
+
+    <main class="container">
+        <!-- Section Chambres -->
+        <section class="rooms-section">
+            <h2>🛏️ Nos Suites Magiques</h2>
+            <div class="rooms-grid">
+                <div class="room-card" data-room="royal" data-price="50">
+                    <div class="room-badge">👑 VIP</div>
+                    <div class="room-icon">🏰</div>
+                    <h3>Suite Royale</h3>
+                    <p>Un palais pour votre animal avec lit douillet, jouets et friandises!</p>
+                    <div class="room-price">50 ⭐/nuit</div>
+                    <ul class="room-features">
+                        <li>🛏️ Grand lit moelleux</li>
+                        <li>🎾 Jouets illimités</li>
+                        <li>🍖 Menu gourmet</li>
+                        <li>📺 Télé animaux</li>
+                    </ul>
+                </div>
+
+                <div class="room-card" data-room="confort" data-price="30">
+                    <div class="room-badge">⭐ Populaire</div>
+                    <div class="room-icon">🏠</div>
+                    <h3>Chambre Confort</h3>
+                    <p>Une chambre douillette avec tout le nécessaire pour être heureux!</p>
+                    <div class="room-price">30 ⭐/nuit</div>
+                    <ul class="room-features">
+                        <li>🛏️ Lit confortable</li>
+                        <li>🎾 Jouets variés</li>
+                        <li>🍖 Bons repas</li>
+                    </ul>
+                </div>
+
+                <div class="room-card" data-room="cosy" data-price="20">
+                    <div class="room-icon">🏕️</div>
+                    <h3>Nid Cosy</h3>
+                    <p>Parfait pour les petits animaux qui aiment les espaces douillets!</p>
+                    <div class="room-price">20 ⭐/nuit</div>
+                    <ul class="room-features">
+                        <li>🛏️ Nid douillet</li>
+                        <li>🎾 Petits jouets</li>
+                    </ul>
+                </div>
+
+                <div class="room-card" data-room="aqua" data-price="35">
+                    <div class="room-badge">💧 Spécial</div>
+                    <div class="room-icon">🐠</div>
+                    <h3>Suite Aquatique</h3>
+                    <p>Pour les poissons et tortues aquatiques, un aquarium de rêve!</p>
+                    <div class="room-price">35 ⭐/nuit</div>
+                    <ul class="room-features">
+                        <li>🌊 Grand aquarium</li>
+                        <li>🪸 Décor tropical</li>
+                        <li>🦐 Nourriture fraîche</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Réservation -->
+        <section class="booking-section">
+            <h2>📝 Réserver une Chambre</h2>
+            <form id="booking-form" class="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pet-name">🐾 Nom de l'animal</label>
+                        <input type="text" id="pet-name" required placeholder="Ex: Moustache, Rex, Coco...">
+                    </div>
+                    <div class="form-group">
+                        <label for="owner-name">👤 Nom du propriétaire</label>
+                        <input type="text" id="owner-name" required placeholder="Ton prénom">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pet-type">🦁 Type d'animal</label>
+                        <select id="pet-type" required>
+                            <option value="">Choisis un animal...</option>
+                            <option value="🐕 Chien">🐕 Chien</option>
+                            <option value="🐈 Chat">🐈 Chat</option>
+                            <option value="🐰 Lapin">🐰 Lapin</option>
+                            <option value="🐹 Hamster">🐹 Hamster</option>
+                            <option value="🦜 Oiseau">🦜 Oiseau</option>
+                            <option value="🐢 Tortue">🐢 Tortue</option>
+                            <option value="🐠 Poisson">🐠 Poisson</option>
+                            <option value="🦎 Lézard">🦎 Lézard</option>
+                            <option value="🐍 Serpent">🐍 Serpent</option>
+                            <option value="🦔 Hérisson">🦔 Hérisson</option>
+                            <option value="🐷 Cochon d'Inde">🐷 Cochon d'Inde</option>
+                            <option value="🦄 Licorne">🦄 Licorne (magique!)</option>
+                            <option value="🐉 Dragon">🐉 Dragon (gentil!)</option>
+                            <option value="🦙 Lama">🦙 Lama</option>
+                            <option value="🦫 Capybara">🦫 Capybara</option>
+                            <option value="🦎 Axolotl">🦎 Axolotl</option>
+                            <option value="🎮 Manette de jeu vidéo">🎮 Manette de jeu vidéo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="room-type">🏨 Type de chambre</label>
+                        <select id="room-type" required>
+                            <option value="">Choisis une chambre...</option>
+                            <option value="royal">🏰 Suite Royale (50⭐)</option>
+                            <option value="confort">🏠 Chambre Confort (30⭐)</option>
+                            <option value="cosy">🏕️ Nid Cosy (20⭐)</option>
+                            <option value="aqua">🐠 Suite Aquatique (35⭐)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="check-in">📅 Date d'arrivée</label>
+                        <input type="date" id="check-in" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nights">🌙 Nombre de nuits</label>
+                        <input type="number" id="nights" min="1" max="30" value="1" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="special-requests">💝 Demandes spéciales</label>
+                    <textarea id="special-requests" placeholder="Ex: Mon chat adore les câlins, mon chien a besoin de promenades..."></textarea>
+                </div>
+
+                <div class="price-preview" id="price-preview">
+                    <span class="price-label">💰 Prix total:</span>
+                    <span class="price-value" id="total-price">0 ⭐</span>
+                </div>
+
+                <button type="submit" class="btn-book">
+                    <span>🎉 Réserver maintenant!</span>
+                </button>
+            </form>
+        </section>
+
+        <!-- Section Réservations -->
+        <section class="reservations-section">
+            <h2>📋 Nos Clients VIP</h2>
+            <div id="reservations-list" class="reservations-list">
+                <div class="empty-state">
+                    <span class="empty-icon">🐾</span>
+                    <p>Aucune réservation pour le moment...</p>
+                    <p>Soyez les premiers à réserver!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Services -->
+        <section class="services-section">
+            <h2>🎁 Nos Services Extra</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🛁</span>
+                    <h3>Spa & Toilettage</h3>
+                    <p>Bain moussant, brossage et parfum!</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🎾</span>
+                    <h3>Aire de Jeux</h3>
+                    <p>Espace géant pour courir et jouer!</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🍖</span>
+                    <h3>Restaurant Gourmet</h3>
+                    <p>Les meilleurs plats pour animaux!</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">📸</span>
+                    <h3>Séance Photo</h3>
+                    <p>Souvenirs mignons garantis!</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🎵</span>
+                    <h3>Musique Relaxante</h3>
+                    <p>Pour des siestes paisibles!</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">💊</span>
+                    <h3>Soins Vétérinaires</h3>
+                    <p>Docteur disponible 24h/24!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-animals">
+            🐕 🐈 🐰 🐹 🦜 🐢 🐠 🦎 🦔 🐷 🦄 🐉
+        </div>
+        <p>Fait avec 💖 pour les amis à quatre pattes (et plus!)</p>
+        <p>© 2025 Hôtel des Animaux Mignons - Tous droits réservés</p>
+    </footer>
+
+    <!-- Modal de confirmation -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-icon">🎊</div>
+            <h2>Réservation Confirmée!</h2>
+            <div id="confirmation-details"></div>
+            <button class="btn-close-modal">Super! 🎉</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
