@@ -5,14 +5,16 @@ const roomPrices = {
     royal: 50,
     confort: 30,
     cosy: 20,
-    aqua: 35
+    aqua: 35,
+    remise: 999
 };
 
 const roomNames = {
     royal: '🏰 Suite Royale',
     confort: '🏠 Chambre Confort',
     cosy: '🏕️ Nid Cosy',
-    aqua: '🐠 Suite Aquatique'
+    aqua: '🐠 Suite Aquatique',
+    remise: '🏚️ La remise dehors'
 };
 
 // Stockage des réservations
@@ -67,6 +69,33 @@ document.addEventListener('DOMContentLoaded', () => {
 // Mise à jour du prix en temps réel
 roomTypeSelect.addEventListener('change', updatePrice);
 nightsInput.addEventListener('input', updatePrice);
+
+// 🐰 Secret: Lapin doux = Manon + La remise dehors
+const petTypeSelect = document.getElementById('pet-type');
+const ownerNameInput = document.getElementById('owner-name');
+const remiseOption = document.querySelector('option[value="remise"]');
+
+petTypeSelect.addEventListener('change', () => {
+    if (petTypeSelect.value === '👹 Lapin doux') {
+        ownerNameInput.value = 'Manon';
+        remiseOption.hidden = false;
+        roomTypeSelect.value = 'remise';
+        updatePrice();
+        
+        // Petit effet spécial
+        ownerNameInput.style.background = 'linear-gradient(135deg, #FFD93D, #FF6B9D)';
+        setTimeout(() => {
+            ownerNameInput.style.background = '';
+        }, 1000);
+    } else {
+        // Cacher la remise si on change d'animal
+        if (roomTypeSelect.value === 'remise') {
+            roomTypeSelect.value = '';
+        }
+        remiseOption.hidden = true;
+        updatePrice();
+    }
+});
 
 function updatePrice() {
     const roomType = roomTypeSelect.value;
